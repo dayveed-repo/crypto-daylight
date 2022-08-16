@@ -1,7 +1,9 @@
 import Head from "next/head";
-import Image from "next/image";
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
+import DashBoard from "../components/DashBoard";
+import Navbar from "../components/Navbar";
+import Sidebar from "../components/Sidebar";
 
 const Home = () => {
   const { value } = useSelector((state) => state.appReducer);
@@ -11,15 +13,18 @@ const Home = () => {
   }, []);
 
   return (
-    <div className="flex min-h-screen flex-col items-center justify-center py-2">
+    <div className="flex min-h-screen w-screen bg-gradient-to-br from-gray-800 to-stone-700">
       <Head>
-        <title>Create Next App</title>
+        <title>Crypto Daylight</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
 
-      <div>
-        <p>Yo</p>
-      </div>
+      <Sidebar />
+
+      <main className="flex flex-col flex-grow">
+        <Navbar />
+        <DashBoard />
+      </main>
     </div>
   );
 };

@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+  .sidebarLink {
+    @apply text-gray-400 p-2 hover:cursor-pointer hover:bg-white hover:text-gray-700 rounded-lg flex items-center space-x-2;
+  }
+
+  .selected {
+    @apply bg-gray-600;
+  }
+}
