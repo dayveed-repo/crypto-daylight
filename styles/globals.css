@@ -10,4 +10,22 @@
   .selected {
     @apply bg-gray-600;
   }
+
+  .dashboardTitle {
+    @apply text-gray-500 mx-auto max-w-3xl mt-10 mb-5;
+  }
+}
+
+.mainBody::-webkit-scrollbar {
+  background-color: #2f3339;
+  width: 8px;
+}
+
+.mainBody::-webkit-scrollbar-track {
+  background-color: #626e7e;
+  border-radius: 12px;
+}
+
+.boxShadow-special:hover {
+  box-shadow: 10px 10px black;
 }

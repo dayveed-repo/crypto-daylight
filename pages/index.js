@@ -1,15 +1,19 @@
 import Head from "next/head";
 import { useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
+import { FetchParams, fetchUrl } from "../api";
 import DashBoard from "../components/DashBoard";
 import Navbar from "../components/Navbar";
 import Sidebar from "../components/Sidebar";
+import { assignCryptoCoins, assignCryptoStats } from "../redux/reducer";
+import axios from "axios";
 
-const Home = () => {
-  const { value } = useSelector((state) => state.appReducer);
+const Home = ({ stats, coins }) => {
+  const dispatch = useDispatch();
 
   useEffect(() => {
-    console.log(value);
+    dispatch(assignCryptoStats(stats));
+    dispatch(assignCryptoCoins(coins));
   }, []);
 
   return (
@@ -27,6 +31,29 @@ const Home = () => {
       </main>
     </div>
   );
+};
+
+// export const getServerSideProps = wrapper.getServerSideProps(
+//   (store) => async () => {
+//     const res = await axios.get(fetchUrl("coins"), FetchParams());
+
+//     const data = await res.data;
+
+//     store.dispatch(assignCryptoStats(data?.data?.stats));
+//   }
+// );
+
+export const getServerSideProps = async () => {
+  const res = await axios.get(fetchUrl("coins"), FetchParams());
+
+  const data = await res.data;
+
+  return {
+    props: {
+      stats: data?.data?.stats,
+      coins: data?.data?.coins,
+    },
+  };
 };
 
 export default Home;

@@ -2,7 +2,7 @@ import React from "react";
 
 const Navbar = () => {
   return (
-    <div className="h-16 w-full">
+    <div className="h-[10vh] w-full">
       <p>Navbar</p>
     </div>
   );
