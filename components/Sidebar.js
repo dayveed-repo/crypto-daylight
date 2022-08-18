@@ -11,7 +11,7 @@ const Sidebar = () => {
   const checkSelected = () => {
     if (router.asPath === "/") {
       return 1;
-    } else if (router.asPath === "/crypto-currency") {
+    } else if (router.asPath === "/cryptoCurrency") {
       return 2;
     } else if (router.asPath === "/exchanges") {
       return 3;
@@ -39,9 +39,7 @@ const Sidebar = () => {
 
         <div
           className={`sidebarLink ${checkSelected() === 2 && "selected"}`}
-          onClick={() =>
-            router.push("/", "/crypto-currency", { shallow: true })
-          }
+          onClick={() => router.push("/", "/cryptoCurrency", { shallow: true })}
         >
           <SiBlockchaindotcom />
           <p>Crypto Currencies</p>
