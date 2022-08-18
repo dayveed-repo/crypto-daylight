@@ -8,7 +8,7 @@ const DashBoard = () => {
   const { cryptoStats, cryptoCoins } = useSelector((state) => state.appReducer);
 
   return (
-    <div className="flex-grow max-h-[90vh] mainBody overflow-y-scroll pb-20">
+    <div className="AppBodyContainer">
       <h3 className="dashboardTitle">Latest Crypto News</h3>
 
       <div className="h-64 w-full mx-auto grid grid-cols-4 grid-rows-2 max-w-3xl gap-2">

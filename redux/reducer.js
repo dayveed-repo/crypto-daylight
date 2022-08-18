@@ -3,6 +3,7 @@ import { createSlice } from "@reduxjs/toolkit";
 const initialState = {
   cryptoStats: null,
   cryptoCoins: null,
+  cryptoNews: null,
 };
 
 export const appSlice = createSlice({
@@ -16,10 +17,15 @@ export const appSlice = createSlice({
     assignCryptoCoins: (state, action) => {
       state.cryptoCoins = action.payload;
     },
+
+    getNews: (state, action) => {
+      state.cryptoNews = action.payload;
+    },
   },
 });
 
 // Action creators are generated for each case reducer function
-export const { assignCryptoStats, assignCryptoCoins } = appSlice.actions;
+export const { assignCryptoStats, assignCryptoCoins, getNews } =
+  appSlice.actions;
 
 export default appSlice.reducer;
