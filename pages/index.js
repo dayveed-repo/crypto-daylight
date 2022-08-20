@@ -18,6 +18,7 @@ import {
 import axios from "axios";
 import { useRouter } from "next/router";
 import CryptoCurrency from "../components/CryptoCurrency";
+import NewsPage from "../components/NewsPage";
 
 const Home = ({ stats, coins, news }) => {
   const dispatch = useDispatch();
@@ -42,6 +43,8 @@ const Home = ({ stats, coins, news }) => {
         <Navbar />
         {router.asPath === "/cryptoCurrency" ? (
           <CryptoCurrency />
+        ) : router.asPath === "/news" ? (
+          <NewsPage />
         ) : (
           <DashBoard />
         )}
@@ -66,9 +69,7 @@ export const getServerSideProps = async () => {
   const data = await res.data;
 
   const newsRes = await axios.get(
-    fetchNewsEndpoint(
-      "/search?q=Crypto&safeSearch=Off&textFormat=Raw&freshness=Day&count=100"
-    ),
+    fetchNewsEndpoint("Crypto"),
     fetchNewsApiParams()
   );
   const newsData = await newsRes.data;

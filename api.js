@@ -13,10 +13,10 @@ export const FetchParams = () => {
   };
 };
 
-export const fetchNewsEndpoint = (endpoint) => {
-  let baseurl = "https://bing-news-search1.p.rapidapi.com/news";
+export const fetchNewsEndpoint = (query) => {
+  let baseurl = `https://bing-news-search1.p.rapidapi.com/news/search?q=${query}&safeSearch=Off&textFormat=Raw&freshness=Day&count=100`;
 
-  return baseurl + endpoint;
+  return baseurl;
 };
 
 export const fetchNewsApiParams = () => {
