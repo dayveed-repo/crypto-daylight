@@ -81,8 +81,9 @@ const DashBoard = () => {
       <div className="max-w-3xl grid grid-cols-2 md:grid-cols-3 gap-3 mx-auto">
         {cryptoCoins
           ?.filter((_, index) => index <= 10)
-          ?.map((coin) => (
+          ?.map((coin, i) => (
             <CoinCard
+              key={i}
               name={coin?.name}
               uid={coin?.uuid}
               price={coin?.price}
