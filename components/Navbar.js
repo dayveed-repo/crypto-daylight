@@ -1,10 +1,11 @@
 import React from "react";
 import { AiOutlineMenu } from "react-icons/ai";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { toggleSidebar } from "../redux/reducer";
 
 const Navbar = () => {
   const dispatch = useDispatch();
+  const { isOpen } = useSelector((state) => state.appReducer);
 
   const handleSidebarToggle = () => {
     dispatch(toggleSidebar());
@@ -18,10 +19,17 @@ const Navbar = () => {
         <h3>Daylight</h3>
       </div>
 
-      <AiOutlineMenu
-        onClick={() => handleSidebarToggle()}
-        className="text-gray-300 text-2xl cursor-pointer"
-      />
+      {isOpen ? (
+        <AiOutlineClose
+          onClick={() => handleSidebarToggle()}
+          className="text-red-500 text-2xl cursor-pointer"
+        />
+      ) : (
+        <AiOutlineMenu
+          onClick={() => handleSidebarToggle()}
+          className="text-gray-300 text-2xl cursor-pointer"
+        />
+      )}
     </div>
   );
 };
