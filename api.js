@@ -4,7 +4,16 @@ export const fetchUrl = (endpoint) => {
   return baseurl + endpoint;
 };
 
-export const FetchParams = () => {
+export const FetchParams = (timePeriod) => {
+  if (timePeriod)
+    return {
+      headers: {
+        "X-RapidAPI-Key": "a0fb0a64d1msh33864f3a0f344b3p1c8024jsn857cda525720",
+        "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
+      },
+      params: { timePeriod: timePeriod },
+    };
+
   return {
     headers: {
       "X-RapidAPI-Key": "a0fb0a64d1msh33864f3a0f344b3p1c8024jsn857cda525720",

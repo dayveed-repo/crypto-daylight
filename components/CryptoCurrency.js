@@ -41,6 +41,7 @@ const CryptoCurrency = () => {
           {filteredCoins.map((coin) => (
             <CoinCard
               name={coin?.name}
+              uid={coin?.uuid}
               icon={coin?.iconUrl}
               id={coin?.rank}
               marketCap={coin?.marketCap}

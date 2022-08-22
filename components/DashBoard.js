@@ -24,7 +24,7 @@ const DashBoard = () => {
       <h3 className="dashboardTitle">Latest Crypto News</h3>
 
       {newsCard?.length && (
-        <div className="h-72 w-full mx-auto grid grid-cols-2 grid-rows-2 max-w-3xl gap-4">
+        <div className="h-72 w-full mx-auto grid grid-cols-2 grid-rows-2 max-w-3xl gap-8">
           <div className="h-full">
             <UpdateCard
               name={newsCard[0]?.name}
@@ -84,6 +84,7 @@ const DashBoard = () => {
           ?.map((coin) => (
             <CoinCard
               name={coin?.name}
+              uid={coin?.uuid}
               price={coin?.price}
               icon={coin?.iconUrl}
               id={coin?.rank}

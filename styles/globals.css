@@ -16,7 +16,15 @@
   }
 
   .AppBodyContainer {
-    @apply flex-grow max-h-[90vh] mainBody overflow-y-scroll pb-20;
+    @apply flex-grow max-h-[90vh] mainBody overflow-y-scroll pb-20 px-10 md:px-0;
+  }
+
+  .coinInfoKey {
+    @apply text-sm text-gray-400;
+  }
+
+  .coinInfoVal {
+    @apply text-sm font-bold text-gray-300;
   }
 }
 
@@ -32,4 +40,10 @@
 
 .boxShadow-special:hover {
   box-shadow: 10px 10px black;
+}
+
+.coinDesc > h3 {
+  margin: 0.5rem 0;
+  color: lavender;
+  font-size: 18px;
 }

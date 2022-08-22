@@ -15,13 +15,15 @@ const Sidebar = () => {
       return 2;
     } else if (router.asPath === "/exchanges") {
       return 3;
-    } else {
+    } else if (router.asPath === "/news") {
       return 4;
+    } else {
+      return;
     }
   };
 
   return (
-    <div className="px-3 py-6 bg-gray-700 h-screen w-2/6 sm:w-1/6">
+    <div className="hidden lg:inline px-3 py-6 bg-gray-700 h-screen w-2/6 sm:w-1/6">
       <div className="flex items-center text-cyan-500 font-semibold text-xl">
         <h3>Crypto</h3>
         <img className="w-14 h-14" src="/crypto-logo.png" alt="app logo" />

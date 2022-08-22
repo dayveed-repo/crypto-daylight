@@ -1,9 +1,19 @@
 import millify from "millify";
+import { useRouter } from "next/router";
 import React from "react";
 
-const CoinCard = ({ name, id, price, dailyChange, marketCap, icon }) => {
+const CoinCard = ({ name, id, uid, price, dailyChange, marketCap, icon }) => {
+  const router = useRouter();
+
+  const viewCoin = () => {
+    router.push("/coin/" + uid);
+  };
+
   return (
-    <div className="bg-gradient-to-br from-gray-700 to-slate-500 p-2 shadow-lg rounded-md">
+    <div
+      onClick={() => viewCoin()}
+      className="bg-gradient-to-br from-gray-700 cursor-pointer to-slate-500 p-2 shadow-lg rounded-md"
+    >
       <div className="flex items-center space-x-2 mb-10">
         <h4 className="text-gray-400">{id}.</h4>
         <h3 className="flex-grow text-gray-200">{name}</h3>
