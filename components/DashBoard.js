@@ -24,7 +24,7 @@ const DashBoard = () => {
       <h3 className="dashboardTitle">Latest Crypto News</h3>
 
       {newsCard?.length && (
-        <div className="h-72 w-full mx-auto grid grid-cols-2 grid-rows-2 max-w-3xl gap-8">
+        <div className="h-auto md:h-72 w-full mx-auto grid grid-cols-2 grid-rows-2 max-w-3xl gap-4 sm:gap-8">
           <div className="h-full">
             <UpdateCard
               name={newsCard[0]?.name}
@@ -66,7 +66,7 @@ const DashBoard = () => {
       )}
 
       <h3 className="dashboardTitle">Global Crypto Stats</h3>
-      <div className="max-w-3xl grid grid-cols-5 gap-3 mx-auto">
+      <div className="max-w-3xl grid grid-cols-2 sm:grid-cols-3 md:grid-cols-5 gap-3 mx-auto">
         <StatsCard
           title="Total Crypto Currencies"
           num={cryptoStats?.totalCoins}
@@ -78,7 +78,7 @@ const DashBoard = () => {
       </div>
 
       <h3 className="dashboardTitle">Top 10 Crypto Currencies</h3>
-      <div className="max-w-3xl grid grid-cols-3 gap-3 mx-auto">
+      <div className="max-w-3xl grid grid-cols-2 md:grid-cols-3 gap-3 mx-auto">
         {cryptoCoins
           ?.filter((_, index) => index <= 10)
           ?.map((coin) => (

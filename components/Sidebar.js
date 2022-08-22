@@ -4,9 +4,11 @@ import { AiOutlineHome } from "react-icons/ai";
 import { SiBlockchaindotcom } from "react-icons/si";
 import { RiExchangeFundsFill } from "react-icons/ri";
 import { HiOutlineNewspaper } from "react-icons/hi";
+import { useSelector } from "react-redux";
 
 const Sidebar = () => {
   const router = useRouter();
+  const { isOpen } = useSelector((state) => state.appReducer);
 
   const checkSelected = () => {
     if (router.asPath === "/") {
@@ -23,7 +25,11 @@ const Sidebar = () => {
   };
 
   return (
-    <div className="hidden lg:inline px-3 py-6 bg-gray-700 h-screen w-2/6 sm:w-1/6">
+    <div
+      className={`${
+        isOpen ? "inline fixed lg:relative" : "hidden lg:inline"
+      } px-3 py-6 bg-gray-700 h-screen w-4/6 sm:3/6 md:w-2/6 lg:w-1/6`}
+    >
       <div className="flex items-center text-cyan-500 font-semibold text-xl">
         <h3>Crypto</h3>
         <img className="w-14 h-14" src="/crypto-logo.png" alt="app logo" />
@@ -46,13 +52,7 @@ const Sidebar = () => {
           <SiBlockchaindotcom />
           <p>Crypto Currencies</p>
         </div>
-        <div
-          className={`sidebarLink ${checkSelected() === 3 && "selected"}`}
-          onClick={() => router.push("/", "/exchanges", { shallow: true })}
-        >
-          <RiExchangeFundsFill />
-          <p>Exchanges</p>
-        </div>
+
         <div
           className={`sidebarLink ${checkSelected() === 4 && "selected"}`}
           onClick={() => router.push("/", "/news", { shallow: true })}

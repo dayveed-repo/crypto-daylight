@@ -36,10 +36,11 @@ const CryptoCurrency = () => {
         </h4>
       </div>
 
-      {filteredCoins.length ? (
-        <div className="max-w-4xl grid grid-cols-4 gap-3 mx-auto">
-          {filteredCoins.map((coin) => (
+      {filteredCoins?.length ? (
+        <div className="max-w-4xl grid grid-cols-2 md:grid-cols-4 gap-3 mx-auto">
+          {filteredCoins.map((coin, i) => (
             <CoinCard
+              key={i}
               name={coin?.name}
               uid={coin?.uuid}
               icon={coin?.iconUrl}

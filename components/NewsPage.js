@@ -5,8 +5,6 @@ import axios from "axios";
 import { fetchNewsApiParams, fetchNewsEndpoint } from "../api";
 
 const NewsPage = () => {
-  //   const { cryptoNews } = useSelector((state) => state.appReducer);
-
   const [selected, setselected] = useState("Crypto");
   const [newsSearch, setnewsSearch] = useState([]);
   const [loading, setloading] = useState(true);
@@ -31,7 +29,7 @@ const NewsPage = () => {
   return (
     <div className="AppBodyContainer">
       <div className="max-w-3xl flex items-center mx-auto">
-        <h2 className="flex-grow mr-5 text-xl text-gray-300 font-semibold">
+        <h2 className="flex-grow mr-5 text-lg md:text-xl text-gray-300 font-semibold">
           Top Latest Crypto News
         </h2>
 
@@ -52,11 +50,13 @@ const NewsPage = () => {
           loading...
         </h3>
       ) : (
-        <div className="grid grid-cols-3 max-w-4xl mx-auto gap-8 mt-10">
-          {newsSearch.value.map((news) => (
+        <div className="grid grid-cols-2 md:grid-cols-3 max-w-4xl mx-auto gap-4 md:gap-8 mt-10">
+          {newsSearch.value.map((news, i) => (
             <UpdateCard
+              key={i}
               name={news?.name}
               linkUrl={news?.url}
+              datePublished={news?.datePublished}
               imgUrl={news?.image?.thumbnail.contentUrl}
               desc={news?.description}
             />
