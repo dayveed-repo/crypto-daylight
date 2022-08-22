@@ -9,4 +9,4 @@
 - axios
 - RapidApi(Coin Rnking and Bing News)
 
-### See it Live 🔥👉 https://day-travel.netlify.app/
+### See it Live 🔥👉 https://crypto-daylight.netlify.app/
