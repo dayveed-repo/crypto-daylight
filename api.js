@@ -8,7 +8,7 @@ export const FetchParams = (timePeriod) => {
   if (timePeriod)
     return {
       headers: {
-        "X-RapidAPI-Key": "a0fb0a64d1msh33864f3a0f344b3p1c8024jsn857cda525720",
+        "X-RapidAPI-Key": "2e66c28d86msh15e42830f839796p141a22jsnfd4acbc0b0cf",
         "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
       },
       params: { timePeriod: timePeriod },
@@ -16,7 +16,7 @@ export const FetchParams = (timePeriod) => {
 
   return {
     headers: {
-      "X-RapidAPI-Key": "a0fb0a64d1msh33864f3a0f344b3p1c8024jsn857cda525720",
+      "X-RapidAPI-Key": "2e66c28d86msh15e42830f839796p141a22jsnfd4acbc0b0cf",
       "X-RapidAPI-Host": "coinranking1.p.rapidapi.com",
     },
   };
@@ -32,7 +32,7 @@ export const fetchNewsApiParams = () => {
   return {
     headers: {
       "X-BingApis-SDK": "true",
-      "X-RapidAPI-Key": "a0fb0a64d1msh33864f3a0f344b3p1c8024jsn857cda525720",
+      "X-RapidAPI-Key": "2e66c28d86msh15e42830f839796p141a22jsnfd4acbc0b0cf",
       "X-RapidAPI-Host": "bing-news-search1.p.rapidapi.com",
     },
   };

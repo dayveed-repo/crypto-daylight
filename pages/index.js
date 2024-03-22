@@ -68,17 +68,17 @@ export const getServerSideProps = async () => {
 
   const data = await res.data;
 
-  const newsRes = await axios.get(
-    fetchNewsEndpoint("Crypto"),
-    fetchNewsApiParams()
-  );
-  const newsData = await newsRes.data;
+  // const newsRes = await axios.get(
+  //   fetchNewsEndpoint("Crypto"),
+  //   fetchNewsApiParams()
+  // );
+  // const newsData = await newsRes.data;
 
   return {
     props: {
       stats: data?.data?.stats,
       coins: data?.data?.coins,
-      news: newsData,
+      news: [],
     },
   };
 };
